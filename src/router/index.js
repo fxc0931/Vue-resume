@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/views/FirstPage'
-import NotFound from '@/views/404'
+// import NotFound from '@/views/404'
 
 Vue.use(Router)
 
@@ -13,15 +13,15 @@ export default new Router({
       path: '/',
       redirect: '/index'
     },
-    {
-      path: '/index',
-      name: 'Index',
-      component: Index
-    },
+    // {
+    //   path: '/index',
+    //   name: 'Index',
+    //   component: Index
+    // },
     {
       path: '*',
       name: '/404',
-      component: NotFound
+      component: Index
     }
   ]
 })
