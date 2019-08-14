@@ -1,12 +1,12 @@
 <template>
     <div >
-      404
+      <span>404</span>
     </div>
 </template>
 
 <script>
 export default {
-  name: '404'
+  name: 'NotFound'
 }
 </script>
 
