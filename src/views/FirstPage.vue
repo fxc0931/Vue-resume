@@ -1,0 +1,117 @@
+<template>
+  <div class="content" v-loading.fullscreen.lock="fullscreenLoading">
+    <el-row>
+      <el-col>
+        <el-container>
+          <el-header>范希晨
+            <p style="font-size: 12px"> 电话:152402321825   邮件:252482481147@qq.com</p>
+          </el-header>
+          <el-main>
+            <p class="subTitle" style="margin-bottom: -8px">教育经历</p>
+            <div v-for="item in educationData" v-bind:key="item.id" style="margin-top: 15px">
+                <el-row>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span class="schoolName">{{item.name}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"> <span>{{item.date}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span>{{item.major}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><li class="schoolOtherInfo" style="margin-top: 5px">{{item.otherInfo}}</li></el-col>
+              </el-row>
+            </div>
+            <el-divider></el-divider>
+            <div>
+              <p class="subTitle">开发技能</p>
+                <li v-for="item in skillData" v-bind:key="item.id" style="line-height: 30px">{{item.name}}</li>
+              <el-divider></el-divider>
+            </div>
+            <p class="subTitle" style="margin-bottom: -8px">工作经历</p>
+            <div v-for="item in companyData" v-bind:key="item.id" style="margin-top: 15px">
+              <el-row>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span class="schoolName">{{item.name}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"> <span>{{item.date}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span>{{item.position}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><li style="margin-top: 5px">{{item.workContent}}</li></el-col>
+              </el-row>
+            </div>
+            <el-divider></el-divider>
+            <p class="subTitle" style="margin-bottom: -8px">项目经验</p>
+            <div v-for="(item) in projectData" v-bind:key="item.id" style="margin-top: 15px">
+              <el-row>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span class="schoolName">{{item.name}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"> <span>{{item.date}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span>{{item.position}}</span></el-col>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><li v-for = "(item1, index) in item.workContent" v-bind:key="index" style="line-height: 30px">{{item1}} </li></el-col>
+              </el-row>
+            </div>
+          </el-main>
+        </el-container>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import https from '../http'
+export default {
+  name: 'FirstPage',
+  data () {
+    return {
+      projectData: [],
+      skillData: [],
+      educationData: [],
+      companyData: [],
+      fullscreenLoading: false
+    }
+  },
+  mounted () {
+    this.fullscreenLoading = true
+    this.getData()
+  },
+  methods: {
+    getData: function () {
+      https.fetchGet('/education').then((data) => {
+        this.educationData = data.data
+      })
+      https.fetchGet('/skill').then((data) => {
+        this.skillData = data.data
+      })
+      https.fetchGet('/company').then((data) => {
+        this.companyData = data.data
+      })
+      https.fetchGet('/project').then((data) => {
+        this.projectData = data.data
+        this.fullscreenLoading = false
+      })
+    }
+  }
+}
+
+// style="background: rgb(249, 250, 252)"
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+  .el-header, .el-footer {
+    /*background-color: #B3C0D1;*/
+    color: #333;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 5px;
+  }
+  .floatRight {
+    float: right;
+  }
+  .subTitle {
+    font-weight:bold;
+    color:black;
+    text-decoration:underline
+  }
+  .schoolName {
+    font-weight:bold;
+    color: #000;
+  }
+  .schoolOtherInfo {
+    color: gray;
+  }
+  span {
+    line-height: 30px;
+  }
+</style>
