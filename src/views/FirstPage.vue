@@ -41,6 +41,13 @@
                 <el-col :xs="24" :sm="24" :md="24" :lg="24"><li v-for = "(item1, index) in item.workContent" v-bind:key="index" style="line-height: 30px">{{item1}} </li></el-col>
               </el-row>
             </div>
+            <el-divider></el-divider>
+            <p class="subTitle" style="margin-bottom: -8px">英语水平</p>
+            <div style="margin-top: 15px">
+              <el-row>
+                <el-col :xs="24" :sm="24" :md="24" :lg="24"><span >IELTS: 6</span></el-col>
+              </el-row>
+            </div>
           </el-main>
         </el-container>
       </el-col>
@@ -51,7 +58,7 @@
 <script>
 import https from '../http'
 export default {
-  name: 'FirstPage',
+  name: 'Index',
   data () {
     return {
       projectData: [],

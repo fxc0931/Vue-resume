@@ -13,15 +13,15 @@ export default new Router({
       path: '/',
       redirect: '/index'
     },
-    {
-      path: '/index',
-      name: 'Index',
-      component: Index
-    },
+    // {
+    //   path: '/index',
+    //   name: 'Index',
+    //   component: Index
+    // },
     {
       path: '*',
       name: '/404',
-      component: NotFound
+      component: Index
     }
   ]
 })
