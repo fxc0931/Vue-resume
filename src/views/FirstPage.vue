@@ -74,17 +74,11 @@ export default {
   },
   methods: {
     getData: function () {
-      https.fetchGet('/education').then((data) => {
-        this.educationData = data.data
-      })
-      https.fetchGet('/skill').then((data) => {
-        this.skillData = data.data
-      })
-      https.fetchGet('/company').then((data) => {
-        this.companyData = data.data
-      })
-      https.fetchGet('/project').then((data) => {
-        this.projectData = data.data
+      https.fetchGet('/allData').then((data) => {
+        this.projectData = data.data[0].project
+        this.educationData = data.data[0].education
+        this.skillData = data.data[0].skill
+        this.companyData = data.data[0].company
         this.fullscreenLoading = false
       })
     }
