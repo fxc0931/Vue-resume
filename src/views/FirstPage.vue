@@ -12,15 +12,15 @@
       <b-navbar-nav>
 <!--        <b-nav-item href="#p5">电话</b-nav-item>-->
 <!--        <b-nav-item href="#p6">邮箱</b-nav-item>-->
-        <b-nav-item href="#" disabled>教育经历</b-nav-item>
-        <b-nav-item href="#" disabled>开发技能</b-nav-item>
-        <b-nav-item href="#" disabled>工作经历</b-nav-item>
-        <b-nav-item href="#" disabled>项目经验</b-nav-item>
+        <b-nav-item href="#" v-on:click="changePoint(1)">教育经历</b-nav-item>
+        <b-nav-item href="#" v-on:click="changePoint(2)">开发技能</b-nav-item>
+        <b-nav-item href="#" v-on:click="changePoint(3)">工作经历</b-nav-item>
+        <b-nav-item href="#" v-on:click="changePoint(4)">项目经验</b-nav-item>
         <b-nav-item href="#p5">联系方式</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-    <div class="content" >
+    <div class="content" style="margin-top: -5px">
   <!--    <div>-->
   <!--    </div>-->
       <el-row>
@@ -108,6 +108,17 @@ export default {
         this.companyData = data.data[0].company
         this.fullscreenLoading = false
       })
+    },
+    changePoint: function (item) {
+      if (item === 1) {
+        window.scrollTo(0, 0)
+      } else if (item === 2) {
+        window.scrollTo(0, 340)
+      } else if (item === 3) {
+        window.scrollTo(0, 670)
+      } else if (item === 4) {
+        window.scrollTo(0, 1000)
+      }
     }
   }
 }
