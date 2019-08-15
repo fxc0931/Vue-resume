@@ -4,7 +4,7 @@
       <el-col>
         <el-container>
           <el-header>范希晨
-            <p style="font-size: 12px"> 电话:152402321825   邮件:252482481147@qq.com</p>
+            <p style="font-size: 12px"> 电话:15602321825   邮件:2568681147@qq.com</p>
           </el-header>
           <el-main>
             <p class="subTitle" style="margin-bottom: -8px">教育经历</p>
