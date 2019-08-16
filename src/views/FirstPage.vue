@@ -39,6 +39,16 @@
                 </el-row>
               </div>
               <el-divider></el-divider>
+              <p class="subTitle" style="margin-bottom: -8px" id="p4">项目经验</p>
+              <div v-for="(item) in projectData" v-bind:key="item.id" style="margin-top: 15px">
+                <el-row>
+                  <el-col :xs="24" :sm="24" :md="24" :lg="24"><span class="schoolName">{{item.name}}</span></el-col>
+                  <el-col :xs="24" :sm="24" :md="24" :lg="24"> <span>{{item.date}}</span></el-col>
+                  <el-col :xs="24" :sm="24" :md="24" :lg="24"><span>{{item.position}}</span></el-col>
+                  <el-col :xs="24" :sm="24" :md="24" :lg="24"><li v-for = "(item1, index) in item.workContent" v-bind:key="index" style="line-height: 30px">{{item1}} </li></el-col>
+                </el-row>
+              </div>
+              <el-divider></el-divider>
               <div>
                 <p class="subTitle" id="p2">开发技能</p>
                   <li v-for="item in skillData" v-bind:key="item.id" style="line-height: 30px">{{item.name}}</li>
@@ -51,16 +61,6 @@
                   <el-col :xs="24" :sm="24" :md="24" :lg="24"> <span>{{item.date}}</span></el-col>
                   <el-col :xs="24" :sm="24" :md="24" :lg="24"><span>{{item.position}}</span></el-col>
                   <el-col :xs="24" :sm="24" :md="24" :lg="24"><li style="margin-top: 5px">{{item.workContent}}</li></el-col>
-                </el-row>
-              </div>
-              <el-divider></el-divider>
-              <p class="subTitle" style="margin-bottom: -8px" id="p4">项目经验</p>
-              <div v-for="(item) in projectData" v-bind:key="item.id" style="margin-top: 15px">
-                <el-row>
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24"><span class="schoolName">{{item.name}}</span></el-col>
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24"> <span>{{item.date}}</span></el-col>
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24"><span>{{item.position}}</span></el-col>
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24"><li v-for = "(item1, index) in item.workContent" v-bind:key="index" style="line-height: 30px">{{item1}} </li></el-col>
                 </el-row>
               </div>
               <el-divider></el-divider>
