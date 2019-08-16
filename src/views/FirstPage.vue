@@ -1,7 +1,7 @@
 <template>
   <div v-loading.fullscreen.lock="fullscreenLoading">
     <b-navbar toggleable="sm" type="light" variant="light" fixed="top">
-    <b-navbar-brand href="/index"><img src="https://en.gravatar.com/userimage/166672495/d485dfa59c424c88e29cea7ba6dc4390.jpg"
+    <b-navbar-brand href="#"><img src="https://en.gravatar.com/userimage/166672495/d485dfa59c424c88e29cea7ba6dc4390.jpg"
                                        class="d-inline-block align-top" alt="Kitten"
                                        style="width: 32px; height: 32px">
       <span style="margin-left: 5px">范希晨</span></b-navbar-brand>
@@ -12,11 +12,11 @@
       <b-navbar-nav>
 <!--        <b-nav-item href="#p5">电话</b-nav-item>-->
 <!--        <b-nav-item href="#p6">邮箱</b-nav-item>-->
-        <b-nav-item href="#" v-on:click="changePoint(1)">教育经历</b-nav-item>
-        <b-nav-item href="#" v-on:click="changePoint(2)">开发技能</b-nav-item>
-        <b-nav-item href="#" v-on:click="changePoint(3)">工作经历</b-nav-item>
-        <b-nav-item href="#" v-on:click="changePoint(4)">项目经验</b-nav-item>
-        <b-nav-item href="#p5">联系方式</b-nav-item>
+        <b-nav-item  v-on:click="changePoint(1)">教育经历</b-nav-item>
+        <b-nav-item  v-on:click="changePoint(4)">项目经验</b-nav-item>
+        <b-nav-item  v-on:click="changePoint(2)">开发技能</b-nav-item>
+        <b-nav-item  v-on:click="changePoint(3)">工作经历</b-nav-item>
+        <b-nav-item  v-on:click="changePoint(3)">联系方式</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -28,7 +28,7 @@
           <el-container>
   <!--          <el-header>-->
   <!--             </el-header>-->
-            <el-main>
+            <el-main style="margin-top: -10px">
               <p class="subTitle" style="margin-bottom: -8px" id="p1">教育经历</p>
               <div v-for="item in educationData" v-bind:key="item.id" style="margin-top: 15px">
                   <el-row>
@@ -72,8 +72,8 @@
               </div>
             </el-main>
             <el-footer>
-              <p style="font-size: 14px" id="p5"> 电话:15602321825 </p>
-              <p style="font-size: 14px" id="p6"> 邮件:2568681147@qq.com</p>
+              <p style="font-size: 14px; text-align: center" id="p5"> 电话:15602321825 </p>
+              <p style="font-size: 14px; text-align: center" id="p6"> 邮件:2568681147@qq.com</p>
             </el-footer>
           </el-container>
         </el-col>
@@ -113,11 +113,11 @@ export default {
       if (item === 1) {
         window.scrollTo(0, 0)
       } else if (item === 2) {
-        window.scrollTo(0, 340)
+        window.scrollTo(0, 890)
       } else if (item === 3) {
-        window.scrollTo(0, 670)
+        window.scrollTo(0, 1300)
       } else if (item === 4) {
-        window.scrollTo(0, 1000)
+        window.scrollTo(0, 330)
       }
     }
   }
@@ -128,16 +128,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  .el-header, .el-footer {
-    /*background-color: #B3C0D1;*/
-    color: #333;
-    text-align: center;
-    line-height: 20px;
-    margin-top: 5px;
-  }
-  .floatRight {
-    float: right;
-  }
   .subTitle {
     font-weight:bold;
     color:black;
