@@ -7,17 +7,17 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 axios.defaults.baseURL = 'https://arcane-journey-61257.herokuapp.com/api'
 //  配置接口地址
 
-//  返回状态判断(添加响应拦截器)
-axios.interceptors.response.use((res) => {
-  //  对响应数据做些事
-  if (!res.data.success) {
-    return Promise.resolve(res)
-  }
-  return res
-}, (error) => {
-  console.log('网络异常')
-  return Promise.reject(error)
-})
+// //  返回状态判断(添加响应拦截器)
+// axios.interceptors.response.use((res) => {
+//   //  对响应数据做些事
+//   if (!res.data.success) {
+//     return Promise.resolve(res)
+//   }
+//   return res
+// }, (error) => {
+//   console.log('网络异常')
+//   return Promise.reject(error)
+// })
 
 // 返回一个Promise(发送get请求)
 export function fetchGet (url, param) {
